@@ -1,7 +1,11 @@
 #ifndef __INC_COLORUTILS_H
 #define __INC_COLORUTILS_H
 
-#include <avr/pgmspace.h>
+#if PATTERN_EDITOR
+    #include "pgmspace.h"
+#else
+    #include <avr/pgmspace.h>
+#endif
 
 #include "pixeltypes.h"
 

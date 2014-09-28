@@ -10,7 +10,13 @@
 #elif defined(__SAM3X8E__)
 #define FASTLED_ARM
 #else
-#define FASTLED_AVR
+
+#if PATTERN_EDITOR
+//nutting
+#else
+    #define FASTLED_AVR
+#endif
+
 #endif
 
 #ifndef CLK_DBL
@@ -36,6 +42,7 @@ typedef volatile       uint8_t RwReg; /**< Read-Write 8-bit register (volatile u
 
 
 // Arduino.h needed for convinience functions digitalPinToPort/BitMask/portOutputRegister and the pinMode methods.
+#if defined(ARDUINO)
 #include<Arduino.h>
 
 // Scaling macro choice
@@ -46,4 +53,5 @@ typedef volatile       uint8_t RwReg; /**< Read-Write 8-bit register (volatile u
 #   define INLINE_SCALE(B, SCALE) B = scale8_video(B, SCALE)
 #endif
 
+#endif
 #endif
