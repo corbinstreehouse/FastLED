@@ -17,7 +17,10 @@
 #define CLK_DBL 0
 #endif
 
-#if defined(FASTLED_AVR) || defined(FASTLED_TEENSY3)
+#if defined(PATTERN_EDITOR)
+
+
+#elif defined(FASTLED_AVR) || defined(FASTLED_TEENSY3)
 #include <avr/io.h>
 #include <avr/interrupt.h> // for cli/se definitions
 
@@ -36,7 +39,7 @@ typedef volatile       uint8_t RwReg; /**< Read-Write 8-bit register (volatile u
 
 
 // Arduino.h needed for convinience functions digitalPinToPort/BitMask/portOutputRegister and the pinMode methods.
-#include<Arduino.h>
+#include "Arduino.h"
 
 // Scaling macro choice
 #if defined(LIB8_ATTINY)

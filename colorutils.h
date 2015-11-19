@@ -1,7 +1,7 @@
 #ifndef __INC_COLORUTILS_H
 #define __INC_COLORUTILS_H
 
-#include <avr/pgmspace.h>
+//#include <avr/pgmspace.h>
 
 #include "pixeltypes.h"
 
@@ -311,6 +311,29 @@ class CRGBPalette16;
 class CRGBPalette256;
 class CHSVPalette16;
 class CHSVPalette256;
+
+#ifndef prog_uint32_t
+typedef uint32_t prog_uint32_t;
+
+#define pgm_read_byte(addr) (*(const unsigned char *)(addr))
+#define pgm_read_word(addr) (*(const unsigned short *)(addr))
+#define pgm_read_dword(addr) (*(const unsigned long *)(addr))
+#define pgm_read_float(addr) (*(const float *)(addr))
+
+#define pgm_read_byte_near(addr) pgm_read_byte(addr)
+#define pgm_read_word_near(addr) pgm_read_word(addr)
+#define pgm_read_dword_near(addr) pgm_read_dword(addr)
+#define pgm_read_float_near(addr) pgm_read_float(addr)
+#define pgm_read_byte_far(addr) pgm_read_byte(addr)
+#define pgm_read_word_far(addr) pgm_read_word(addr)
+#define pgm_read_dword_far(addr) pgm_read_dword(addr)
+#define pgm_read_float_far(addr) pgm_read_float(addr)
+
+#define PROGMEM 
+
+#endif
+
+
 typedef prog_uint32_t TProgmemRGBPalette16[16];
 typedef prog_uint32_t TProgmemHSVPalette16[16];
 #define TProgmemPalette16 TProgmemRGBPalette16 

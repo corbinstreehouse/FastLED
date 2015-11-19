@@ -12,6 +12,10 @@
 #define RGB_BYTE1(RO) ((RO>>3) & 0x3)
 #define RGB_BYTE2(RO) ((RO) & 0x3)
 
+#ifndef byte
+typedef uint8_t byte;
+#endif
+
 // operator byte *(struct CRGB[] arr) { return (byte*)arr; }
 
 #define DISABLE_DITHER 0x00
