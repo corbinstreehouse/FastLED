@@ -20,8 +20,10 @@
 #include "platforms/arm/d21/led_sysdefs_arm_d21.h"
 #elif defined(__XTENSA__)
 #error "XTENSA-architecture microcontrollers are not supported."
-#else
+#elif defined(__x86_64__)
+#include "platforms/osx/osx.h"
 // AVR platforms
+#else
 #include "platforms/avr/led_sysdefs_avr.h"
 #endif
 

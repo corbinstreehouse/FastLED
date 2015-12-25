@@ -20,6 +20,8 @@
 #include "platforms/arm/d21/fastled_arm_d21.h"
 #elif defined(__XTENSA__)
 #error "XTENSA-architecture microcontrollers are not supported"
+#elif defined(__x86_64__)
+#include "platforms/osx/osx.h"
 #else
 // AVR platforms
 #include "platforms/avr/fastled_avr.h"
