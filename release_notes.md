@@ -1,4 +1,9 @@
-FastLED3.1.1pre
+FastLED3.1.2pre
+===============
+
+* Add SK6822 timings
+
+FastLED3.1.1
 ============
 * Enabled RFDuino/nrf51822 hardware SPI support
 * Fix edge case bug w/HSV palette blending 
