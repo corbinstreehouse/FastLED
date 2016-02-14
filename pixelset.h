@@ -2,6 +2,7 @@
 #define __INC_PIXELSET_H
 
 #include "FastLED.h"
+#include "Arduino.h"
 
 /// Represents a set of CRGB led objects.  Provides the [] array operator, and works like a normal array in that case.
 /// This should be kept in sync with the set of functions provided by CRGB as well as functions in colorutils.  Note
